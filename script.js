@@ -5,7 +5,7 @@ const gridSize = 10;
         const result = document.getElementById('result');
         const flagsLeft = document.getElementById('flagsLeft');
         let flagsPlaced = 0;
-        let bombs = [];
+        let bomb = [];
         let revealed = [];
 // Initialize the grid
         for (let i = 0; i < gridSize * gridSize; i++) {
@@ -19,10 +19,10 @@ const gridSize = 10;
             grid.appendChild(cell);
         }
 // Randomly place bombs
-        while (bombs.length < bombCount) {
+        while (bomb.length < bombCount) {
             const bombIndex = Math.floor(Math.random() * gridSize * gridSize);
-            if (!bombs.includes(bombIndex)) {
-                bombs.push(bombIndex);
+            if (!bomb.includes(bombIndex)) {
+                bomb.push(bombIndex);
             }
         }
 
@@ -30,7 +30,7 @@ const gridSize = 10;
         function cellClick(event) {
             const cell = event.target;
             if (cell.dataset.state === 'hidden') {
-                if (bombs.includes(Number(cell.id))) {
+                if (bomb.includes(Number(cell.id))) {
                     cell.classList.add('bomb');
                     result.innerText = 'YOU LOSE!';
                     return;
