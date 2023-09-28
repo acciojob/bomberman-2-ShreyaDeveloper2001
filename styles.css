@@ -1,19 +1,41 @@
-.grid-container {
-    margin: 20px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-}
-.grid-item {
-    /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-}
-.flex-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.grid {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-gap: 2px;
+        }
+
+        .cell {
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+ .valid {
+            background-color: #ccc;
+        }
+
+        .bomb {
+            background-color: #ff6666;
+        }
+
+        .checked {
+            background-color: #e6e6e6;
+            cursor: default;
+        }
+ .flag {
+            background-color: #ffcc00;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        #flagsLeft {
+            font-weight: bold;
+        }
